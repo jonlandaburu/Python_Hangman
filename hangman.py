@@ -150,7 +150,10 @@ def chooseRandomWord():
     data = my_file.read()
     data_into_list = data.replace('\n', ' ').split()
     my_file.close()
-    return random.choice(data_into_list).upper()
+    word = ""
+    while len(word) < 8:
+        word = random.choice(data_into_list).upper()
+    return word
 
 ################################################################################
 ## getWordWithGuessedLetters(guessedLetters, secretWord)                      ##
